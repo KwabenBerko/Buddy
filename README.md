@@ -11,7 +11,7 @@
 
 ## :bulb: Motivation and Context
 My main motivation for working on this was to try out JetPack Compose.
-I'm pleasantly surprised with how easy it was to setup the puppies list screen: No Adapters, No ViewHolders etc.
+I was pleasantly surprised with how easy it was to setup the puppies list screen: No Adapters, No ViewHolders etc.
 The future of Android UI is really exciting!
 
 
