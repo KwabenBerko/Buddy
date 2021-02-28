@@ -53,8 +53,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.androiddevchallenge.R
-import com.example.androiddevchallenge.data.model.Sex
 import com.example.androiddevchallenge.data.model.Puppy
+import com.example.androiddevchallenge.data.model.Sex
 import com.example.androiddevchallenge.ui.theme.Rubik
 
 @Composable

@@ -16,8 +16,8 @@
 package com.example.androiddevchallenge.data
 
 import com.example.androiddevchallenge.R
-import com.example.androiddevchallenge.data.model.Sex
 import com.example.androiddevchallenge.data.model.Puppy
+import com.example.androiddevchallenge.data.model.Sex
 
 class PuppyRepository {
 

@@ -44,8 +44,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.androiddevchallenge.data.model.Sex
 import com.example.androiddevchallenge.data.model.Puppy
+import com.example.androiddevchallenge.data.model.Sex
 import com.example.androiddevchallenge.ui.theme.Rubik
 
 @Composable
