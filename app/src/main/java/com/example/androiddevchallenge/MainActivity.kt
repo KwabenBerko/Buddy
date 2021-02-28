@@ -30,7 +30,6 @@ import com.example.androiddevchallenge.ui.screens.PuppyDetailScreen
 import com.example.androiddevchallenge.ui.screens.PuppyListScreen
 import com.example.androiddevchallenge.ui.theme.BuddyTheme
 
-
 @ExperimentalFoundationApi
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,4 +70,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
