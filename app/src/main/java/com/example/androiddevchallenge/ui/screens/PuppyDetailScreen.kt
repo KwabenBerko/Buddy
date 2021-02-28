@@ -107,7 +107,7 @@ fun PuppyDetailScreen(puppy: Puppy, window: Window, navController: NavController
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         modifier = Modifier.size(28.dp),
-                        tint = colorResource(id = R.color.brown_700),
+                        tint = colorResource(id = R.color.blue_700),
                         contentDescription = null
                     )
                 }
@@ -176,7 +176,7 @@ fun PuppyDetailScreen(puppy: Puppy, window: Window, navController: NavController
                     .padding(12.dp)
                     .height(52.dp)
                     .fillMaxWidth()
-                    .background(colorResource(id = R.color.brown_500), RoundedCornerShape(3.dp))
+                    .background(colorResource(id = R.color.blue_500), RoundedCornerShape(3.dp))
 
             ) {
                 Text(

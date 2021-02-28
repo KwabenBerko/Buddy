@@ -120,7 +120,7 @@ fun IntroScreen(window: Window, navController: NavController) {
                 Text(
                     text = "Start Adopting",
                     style = TextStyle(
-                        color = colorResource(id = R.color.brown_700),
+                        color = colorResource(id = R.color.blue_700),
                         fontSize = 17.sp,
                         fontFamily = Rubik,
                         fontWeight = FontWeight.Bold

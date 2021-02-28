@@ -52,7 +52,7 @@ fun PuppyListScreen(puppies: List<Puppy>, navController: NavController) {
                             fontSize = 21.sp,
                             fontFamily = Rubik,
                             fontWeight = FontWeight.Bold,
-                            color = colorResource(id = R.color.brown_700)
+                            color = colorResource(id = R.color.blue_700)
                         )
                     )
                 },
