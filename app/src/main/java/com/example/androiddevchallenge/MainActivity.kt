@@ -18,8 +18,11 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androiddevchallenge.ui.screen.IntroScreen
-import com.example.androiddevchallenge.ui.screen.PuppyListScreen
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.androiddevchallenge.ui.screens.IntroScreen
+import com.example.androiddevchallenge.ui.screens.PuppyListScreen
 import com.example.androiddevchallenge.ui.theme.BuddyTheme
 
 
@@ -29,8 +32,17 @@ class MainActivity : AppCompatActivity() {
 
         setContent {
             BuddyTheme {
-                IntroScreen(window)
-                //PuppyListScreen()
+                val navController = rememberNavController()
+
+                NavHost(navController = navController, startDestination = "intro") {
+                    composable("intro") {
+                        IntroScreen(
+                            window = window,
+                            navController = navController
+                        )
+                    }
+                    composable("puppiesList") { PuppyListScreen(navController = navController) }
+                }
             }
         }
     }

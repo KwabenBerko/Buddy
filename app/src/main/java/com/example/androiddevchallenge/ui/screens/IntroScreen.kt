@@ -1,4 +1,4 @@
-package com.example.androiddevchallenge.ui.screen
+package com.example.androiddevchallenge.ui.screens
 
 import android.view.Window
 import android.view.WindowManager
@@ -18,12 +18,13 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.view.WindowCompat
+import androidx.navigation.NavController
+import androidx.navigation.compose.navigate
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.Rubik
 
 @Composable
-fun IntroScreen(window: Window) {
+fun IntroScreen(window: Window, navController: NavController) {
 
     @Suppress("DEPRECATION")
     window.setFlags(
@@ -69,8 +70,12 @@ fun IntroScreen(window: Window) {
             }
 
             TextButton(
-
                 onClick = {
+                    @Suppress("DEPRECATION")
+                    window.clearFlags(
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN
+                    )
+                    navController.navigate("puppiesList")
                 },
                 modifier = Modifier
                     .padding(12.dp)

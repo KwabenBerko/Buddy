@@ -1,12 +1,12 @@
-package com.example.androiddevchallenge.ui.screen
+package com.example.androiddevchallenge.ui.screens
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 
 @Composable
-fun PuppyListScreen(){
+fun PuppyListScreen(navController: NavController){
 
     LazyColumn{
         items(count = 5){
@@ -22,10 +22,3 @@ fun PuppyListItem(){
     Text(text = "A Puppy")
 }
 
-
-
-@Preview
-@Composable
-fun PuppyListScreenPreview(){
-    PuppyListScreen()
-}
