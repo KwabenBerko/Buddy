@@ -53,7 +53,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.androiddevchallenge.R
-import com.example.androiddevchallenge.data.model.Gender
+import com.example.androiddevchallenge.data.model.Sex
 import com.example.androiddevchallenge.data.model.Puppy
 import com.example.androiddevchallenge.ui.theme.Rubik
 
@@ -139,7 +139,7 @@ fun PuppyDetailScreen(puppy: Puppy, window: Window, navController: NavController
                     Box(
                         modifier = Modifier
                             .background(
-                                Color(color = if (puppy.gender == Gender.FEMALE) 0xFFFF087E else 0xFF03A9F4),
+                                Color(color = if (puppy.sex == Sex.FEMALE) 0xFFFF087E else 0xFF03A9F4),
                                 shape = CircleShape
                             )
                             .padding(6.dp)
@@ -147,7 +147,7 @@ fun PuppyDetailScreen(puppy: Puppy, window: Window, navController: NavController
                         Icon(
                             modifier = Modifier
                                 .size(22.dp),
-                            imageVector = if (puppy.gender == Gender.FEMALE) Icons.Default.Female else Icons.Default.Male,
+                            imageVector = if (puppy.sex == Sex.FEMALE) Icons.Default.Female else Icons.Default.Male,
                             contentDescription = null,
                             tint = Color.White
                         )

@@ -15,7 +15,7 @@
  */
 package com.example.androiddevchallenge.data.model
 
-enum class Gender {
+enum class Sex {
     MALE,
     FEMALE
 }

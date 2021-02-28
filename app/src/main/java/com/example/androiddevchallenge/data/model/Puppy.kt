@@ -20,7 +20,7 @@ import androidx.annotation.DrawableRes
 data class Puppy(
     val id: Int,
     val name: String,
-    val gender: Gender,
+    val sex: Sex,
     val breed: String,
     val description: String,
     @DrawableRes val image: Int

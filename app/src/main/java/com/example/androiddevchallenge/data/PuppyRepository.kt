@@ -16,7 +16,7 @@
 package com.example.androiddevchallenge.data
 
 import com.example.androiddevchallenge.R
-import com.example.androiddevchallenge.data.model.Gender
+import com.example.androiddevchallenge.data.model.Sex
 import com.example.androiddevchallenge.data.model.Puppy
 
 class PuppyRepository {
@@ -30,7 +30,7 @@ class PuppyRepository {
                 name = "Archie",
                 breed = "Havanese",
                 description = DESCRIPTION,
-                gender = Gender.MALE,
+                sex = Sex.MALE,
                 image = R.drawable.archie
             ),
             Puppy(
@@ -38,7 +38,7 @@ class PuppyRepository {
                 name = "Ariel",
                 breed = "Poodle",
                 description = DESCRIPTION,
-                gender = Gender.FEMALE,
+                sex = Sex.FEMALE,
                 image = R.drawable.ariel
             ),
 
@@ -47,7 +47,7 @@ class PuppyRepository {
                 name = "Coco",
                 breed = "Rottweiler",
                 description = DESCRIPTION,
-                gender = Gender.FEMALE,
+                sex = Sex.FEMALE,
                 image = R.drawable.coco
             ),
             Puppy(
@@ -55,7 +55,7 @@ class PuppyRepository {
                 name = "Roxy",
                 breed = "Pomeranian",
                 description = DESCRIPTION,
-                gender = Gender.FEMALE,
+                sex = Sex.FEMALE,
                 image = R.drawable.roxy
             ),
 
@@ -64,7 +64,7 @@ class PuppyRepository {
                 name = "Mika",
                 breed = "Labrador",
                 description = DESCRIPTION,
-                gender = Gender.MALE,
+                sex = Sex.MALE,
                 image = R.drawable.mika
             ),
             Puppy(
@@ -72,7 +72,7 @@ class PuppyRepository {
                 name = "Rocky",
                 breed = "Bulldog",
                 description = DESCRIPTION,
-                gender = Gender.MALE,
+                sex = Sex.MALE,
                 image = R.drawable.rocky
             ),
 
@@ -81,7 +81,7 @@ class PuppyRepository {
                 name = "Finn",
                 breed = "Chihuahua",
                 description = DESCRIPTION,
-                gender = Gender.MALE,
+                sex = Sex.MALE,
                 image = R.drawable.finn
             ),
         )
