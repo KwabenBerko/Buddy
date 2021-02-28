@@ -8,14 +8,20 @@ import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Female
+import androidx.compose.material.icons.filled.Male
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -73,7 +79,7 @@ fun PuppyListItem(puppy: Puppy) {
         backgroundColor = Color.White,
         modifier = Modifier
             .height(240.dp)
-            .padding(10.dp)
+            .padding(6.dp)
             .fillMaxSize()
     ) {
         Column(modifier = Modifier.padding(0.dp)) {
@@ -82,19 +88,53 @@ fun PuppyListItem(puppy: Puppy) {
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .height(160.dp)
+                    .height(170.dp)
                     .fillMaxWidth()
             )
-            Column(Modifier.padding(8.dp)) {
-                Text(
-                    text = puppy.name,
-                    style = TextStyle(
-                        fontSize = 15.sp,
-                        fontFamily = Rubik,
-                        fontWeight = FontWeight.W600,
-                        color = Color(0xFF575757),
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+            ) {
+                Column {
+                    Text(
+                        text = puppy.name,
+                        style = TextStyle(
+                            fontSize = 16.sp,
+                            fontFamily = Rubik,
+                            fontWeight = FontWeight.W600,
+                            color = Color(0xFF575757),
+                        )
                     )
-                )
+
+                    Text(
+                        text = puppy.breed,
+                        style = TextStyle(
+                            fontSize = 12.sp,
+                            fontFamily = Rubik,
+                            color = Color(0xFF575757),
+                        )
+                    )
+                }
+
+                Box(
+                    modifier = Modifier
+                        .background(
+                            Color(color = if (puppy.gender == Gender.FEMALE) 0xFFFF087E else 0xFF03A9F4),
+                            shape = CircleShape
+                        )
+                        .padding(2.dp)
+                ) {
+                    Icon(
+                        modifier = Modifier
+                            .size(17.dp),
+                        imageVector = if (puppy.gender == Gender.FEMALE) Icons.Default.Female else Icons.Default.Male,
+                        contentDescription = null,
+                        tint = Color.White
+                    )
+                }
+
             }
         }
     }
@@ -119,25 +159,9 @@ fun getPuppies(): List<Puppy> {
             gender = Gender.FEMALE,
             image = R.drawable.ariel
         ),
-        Puppy(
-            id = 3,
-            name = "Mika",
-            breed = "Labrador",
-            description = "",
-            gender = Gender.MALE,
-            image = R.drawable.mika
-        ),
-        Puppy(
-            id = 4,
-            name = "Rocky",
-            breed = "Bulldog",
-            description = "",
-            gender = Gender.MALE,
-            image = R.drawable.rocky
-        ),
 
         Puppy(
-            id = 6,
+            id = 3,
             name = "Coco",
             breed = "Rottweiler",
             description = "",
@@ -145,7 +169,7 @@ fun getPuppies(): List<Puppy> {
             image = R.drawable.coco
         ),
         Puppy(
-            id = 7,
+            id = 4,
             name = "Roxy",
             breed = "Pomeranian",
             description = "",
@@ -154,15 +178,31 @@ fun getPuppies(): List<Puppy> {
         ),
 
         Puppy(
-            id = 8,
+            id = 5,
+            name = "Mika",
+            breed = "Labrador",
+            description = "",
+            gender = Gender.MALE,
+            image = R.drawable.mika
+        ),
+        Puppy(
+            id = 6,
+            name = "Rocky",
+            breed = "Bulldog",
+            description = "",
+            gender = Gender.MALE,
+            image = R.drawable.rocky
+        ),
+
+        Puppy(
+            id = 7,
             name = "Finn",
             breed = "Chihuahua",
             description = "",
             gender = Gender.MALE,
             image = R.drawable.finn
         ),
-
-        )
+    )
 }
 
 
