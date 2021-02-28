@@ -63,7 +63,7 @@ fun PuppyListItem(puppy: Puppy, onPuppyClicked: (puppy: Puppy) -> Unit) {
         Column(modifier = Modifier.padding(0.dp)) {
             Image(
                 painter = painterResource(id = puppy.image),
-                contentDescription = null,
+                contentDescription = "Image of ${puppy.name}",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .height(170.dp)
@@ -108,7 +108,7 @@ fun PuppyListItem(puppy: Puppy, onPuppyClicked: (puppy: Puppy) -> Unit) {
                         modifier = Modifier
                             .size(17.dp),
                         imageVector = if (puppy.sex == Sex.FEMALE) Icons.Default.Female else Icons.Default.Male,
-                        contentDescription = null,
+                        contentDescription = if (puppy.sex == Sex.FEMALE) "Female" else "Male",
                         tint = Color.White
                     )
                 }

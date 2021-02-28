@@ -90,7 +90,7 @@ fun PuppyDetailScreen(puppy: Puppy, window: Window, navController: NavController
                 painter = painterResource(id = puppy.image),
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize(),
-                contentDescription = null
+                contentDescription = "Image of ${puppy.name}"
             )
             Box(
                 modifier = Modifier
@@ -108,7 +108,7 @@ fun PuppyDetailScreen(puppy: Puppy, window: Window, navController: NavController
                         imageVector = Icons.Default.ArrowBack,
                         modifier = Modifier.size(28.dp),
                         tint = colorResource(id = R.color.blue_700),
-                        contentDescription = null
+                        contentDescription = "Go back to puppies list"
                     )
                 }
             }
@@ -148,7 +148,7 @@ fun PuppyDetailScreen(puppy: Puppy, window: Window, navController: NavController
                             modifier = Modifier
                                 .size(22.dp),
                             imageVector = if (puppy.sex == Sex.FEMALE) Icons.Default.Female else Icons.Default.Male,
-                            contentDescription = null,
+                            contentDescription = if (puppy.sex == Sex.FEMALE) "Male" else "Female",
                             tint = Color.White
                         )
                     }

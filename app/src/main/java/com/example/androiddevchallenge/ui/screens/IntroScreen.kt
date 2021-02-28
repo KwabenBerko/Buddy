@@ -75,7 +75,7 @@ fun IntroScreen(window: Window, navController: NavController) {
             modifier = Modifier.fillMaxSize(),
             painter = painterResource(id = R.drawable.buddy_bg),
             contentScale = ContentScale.Crop,
-            contentDescription = null
+            contentDescription = "Buddy App background image"
         )
 
         Column(
