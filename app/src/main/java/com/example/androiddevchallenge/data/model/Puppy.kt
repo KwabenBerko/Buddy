@@ -1,4 +1,4 @@
-package com.example.androiddevchallenge.model
+package com.example.androiddevchallenge.data.model
 
 import androidx.annotation.DrawableRes
 

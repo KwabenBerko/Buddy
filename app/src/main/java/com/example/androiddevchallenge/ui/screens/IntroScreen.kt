@@ -9,6 +9,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -26,11 +28,25 @@ import com.example.androiddevchallenge.ui.theme.Rubik
 @Composable
 fun IntroScreen(window: Window, navController: NavController) {
 
-    @Suppress("DEPRECATION")
-    window.setFlags(
-        WindowManager.LayoutParams.FLAG_FULLSCREEN,
-        WindowManager.LayoutParams.FLAG_FULLSCREEN
-    )
+    SideEffect(effect = {
+        @Suppress("DEPRECATION")
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+    })
+
+    DisposableEffect(Unit) {
+        onDispose {
+            @Suppress("DEPRECATION")
+            window.clearFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
+    }
+
+
+
 
     Box {
 
@@ -71,11 +87,7 @@ fun IntroScreen(window: Window, navController: NavController) {
 
             TextButton(
                 onClick = {
-                    @Suppress("DEPRECATION")
-                    window.clearFlags(
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN
-                    )
-                    navController.navigate("puppiesList")
+                    navController.navigate("puppies")
                 },
                 modifier = Modifier
                     .padding(12.dp)

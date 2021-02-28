@@ -19,10 +19,14 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
+import com.example.androiddevchallenge.data.PuppyRepository
 import com.example.androiddevchallenge.ui.screens.IntroScreen
+import com.example.androiddevchallenge.ui.screens.PuppyDetailScreen
 import com.example.androiddevchallenge.ui.screens.PuppyListScreen
 import com.example.androiddevchallenge.ui.theme.BuddyTheme
 
@@ -34,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         setContent {
             BuddyTheme {
+                val puppyRepository = PuppyRepository()
                 val navController = rememberNavController()
 
                 NavHost(navController = navController, startDestination = "intro") {
@@ -43,7 +48,24 @@ class MainActivity : AppCompatActivity() {
                             navController = navController
                         )
                     }
-                    composable("puppiesList") { PuppyListScreen(navController = navController) }
+                    composable("puppies") {
+                        PuppyListScreen(
+                            puppies = puppyRepository.findAllPuppies(),
+                            navController = navController
+                        )
+                    }
+
+                    composable(
+                        "puppies/{puppyId}",
+                        arguments = listOf(navArgument("puppyId") { type = NavType.IntType })
+                    ) { backStackEntry ->
+                        val puppyId = backStackEntry.arguments!!.getInt("puppyId")
+                        PuppyDetailScreen(
+                            puppy = puppyRepository.findPuppyById(puppyId),
+                            window = window,
+                            navController = navController
+                        )
+                    }
                 }
             }
         }
